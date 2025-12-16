@@ -37,21 +37,8 @@ export async function startServer() {
     })
   );
 
-  // // Path to React build folder
-  // const reactBuildPath = path.join(__dirname, "../../ems-client/build");
-
-  // // Serve React frontend build
-  // app.use(express.static(reactBuildPath));
-
-  // // Fallback to index.html for React routing
-  // app.get("*", (req, res) => {
-  //   res.sendFile(path.join(reactBuildPath,"index.html"));
-  // });
-
   const PORT = process.env.PORT || 4000;
   app.listen(PORT, () => {
     console.log(`🚀 App running at http://localhost:${PORT}`);
   });
 }
-
-// startServer();

@@ -10,21 +10,6 @@ import reportWebVitals from './reportWebVitals';
 
 import client from "./apolloClient";
 
-
-// const httpLink = new HttpLink({
-//   uri: "http://localhost:4000/graphql",
-//   headers: {
-//     Authorization: localStorage.getItem("token")
-//       ? `Bearer ${localStorage.getItem("token")}`
-//       : "Bearer dummy-admin-token",
-//   },
-// });
-
-// const client = new ApolloClient({
-//   link: httpLink,
-//   cache: new InMemoryCache(),
-// });
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  <ApolloProvider client={client}>

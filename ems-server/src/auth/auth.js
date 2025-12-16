@@ -25,27 +25,4 @@ export function getUserFromToken(authHeader) {
   } catch {
     return null;
   }
-//   // DEV MODE: allow dummy tokens
-//   if (token === "dummy-admin-token") {
-//     return {
-//       id: "1",
-//       role: "admin",
-//       name: "Dev Admin",
-//     };
-//   }
-
-//   if (token === "dummy-employee-token") {
-//     return {
-//       id: "2",
-//       role: "employee",
-//       name: "Dev Employee",
-//     };
-//   }
-
-//   try {
-//     return jwt.verify(token, process.env.JWT_SECRET);
-//   } catch (err) {
-//     console.error("JWT verify failed:", err.message);
-//     return null;
-//   }
 }

@@ -24,10 +24,6 @@ const Logo = styled.div`
   margin-left: 10px;
 `;
 
-// const Spacer = styled.div`
-//   flex: 1;
-// `;
-
 const LogoutIcon = styled.span`
   cursor: pointer;
   font-size: 16px;
