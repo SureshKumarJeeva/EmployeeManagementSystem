@@ -55,7 +55,7 @@ function Login({ onLogin }) {
       if (rememberMe) {
         setLocalStorageItemWithExpiry("token", token, 7 * 24 * 60 * 60 * 1000); // 7 days expiry for remember me
       } else {
-        setSessionItemWithExpiry("token", token, 0); // No expiry for session storage
+        setSessionItemWithExpiry("token", token, 1 * 24 * 60 * 60 * 1000); // No expiry for session storage
       }
 
       onLogin();
