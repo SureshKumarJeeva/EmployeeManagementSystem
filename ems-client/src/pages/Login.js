@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client/react";
 import { LOGIN_MUTATION } from "../graphql/authMutations";
 import styled from "styled-components";
-import {setSessionItemWithExpiry} from "./Utils/Session";
+import {setSessionItemWithExpiry} from "../Utils/Session";
 
 const Container = styled.div`
   height: 100vh;
