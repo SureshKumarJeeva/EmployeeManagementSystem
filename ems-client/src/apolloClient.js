@@ -3,7 +3,7 @@ import { setContext } from "@apollo/client/link/context";
 import { getSessionItemWithExpiry, getLocalStorageItemWithExpiry } from "./Utils/Session";
 
 const httpLink = new HttpLink ({
-  uri: "http://localhost:4000/graphql", // IMPORTANT: same server, proxy through Express
+  uri: "https://ems-backend-x7gp.onrender.com/graphql", // IMPORTANT: same server, proxy through Express
 });
 
 const authLink = setContext((_, { headers }) => {
