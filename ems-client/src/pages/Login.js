@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client/react";
 import { LOGIN_MUTATION } from "../graphql/authMutations";
 import styled from "styled-components";
+import {setSessionItemWithExpiry} from "./Utils/Session";
 
 const Container = styled.div`
   height: 100vh;
@@ -50,11 +51,11 @@ function Login({ onLogin }) {
     });
     
       const token = res.data.login.token;
-
+      
       if (rememberMe) {
-        localStorage.setItem("token", token);
+        setLocalStorageItemWithExpiry("token", token, 7 * 24 * 60 * 60 * 1000); // 7 days expiry for remember me
       } else {
-        sessionStorage.setItem("token", token);
+        setSessionItemWithExpiry("token", token, 0); // No expiry for session storage
       }
 
       onLogin();
@@ -83,14 +84,14 @@ function Login({ onLogin }) {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <label>
+          {/* <label>
             <input
               type="checkbox"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
             />
             Remember me
-          </label>
+          </label> */}
 
           <Button type="submit" disabled={loading}>
             Login

@@ -6,6 +6,8 @@ import DetailView from "./Components/DetailView";
 import TopBar from "./Components/TopBar";
 import Sidebar from "./Components/Sidebar";
 import Login from "./pages/Login";
+import {getSessionItemWithExpiry} from "./Utils/Session";
+
 const TOPBAR_HEIGHT = 50;
 
 const AppContainer = styled.div`
@@ -41,7 +43,8 @@ const DetailContainerWrapper = styled.div`
 `;
 
 function App() {
-  const isAuthenticated = !!localStorage.getItem("token") || !!sessionStorage.getItem("token");
+
+  const isAuthenticated = !!getLocalStorageItemWithExpiry("token") || !!getSessionItemWithExpiry("token");
   const navigate = useNavigate();
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -50,7 +53,6 @@ function App() {
   const toggleSidebar = () => {
     setSidebarOpen((prev) => !prev);
   };
-  const token = localStorage.getItem("token") || sessionStorage.getItem("token");
 
   const handleLoginSuccess = () => {
     navigate("/", { replace: true });
