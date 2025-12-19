@@ -6,7 +6,7 @@ import DetailView from "./Components/DetailView";
 import TopBar from "./Components/TopBar";
 import Sidebar from "./Components/Sidebar";
 import Login from "./pages/Login";
-import {getSessionItemWithExpiry} from "./Utils/Session";
+import { getSessionItemWithExpiry, getLocalStorageItemWithExpiry } from "./Utils/Session";
 
 const TOPBAR_HEIGHT = 50;
 

@@ -1,7 +1,3 @@
 ems-client/node_modules
 ems-server/node_modules
-ems-client/build/favicon.ico
-ems-client/build/logo192.png
-ems-client/build/logo512.png
-ems-client/build/manifest.json
-ems-client/build/robots.txt
+ems-client/build

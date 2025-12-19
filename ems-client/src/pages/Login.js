@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client/react";
 import { LOGIN_MUTATION } from "../graphql/authMutations";
 import styled from "styled-components";
-import {setSessionItemWithExpiry} from "../Utils/Session";
+import {setSessionItemWithExpiry, setLocalStorageItemWithExpiry} from "../Utils/Session";
 
 const Container = styled.div`
   height: 100vh;
@@ -84,14 +84,14 @@ function Login({ onLogin }) {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          {/* <label>
+          <label>
             <input
               type="checkbox"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
             />
             Remember me
-          </label> */}
+          </label>
 
           <Button type="submit" disabled={loading}>
             Login
